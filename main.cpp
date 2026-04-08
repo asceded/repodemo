@@ -1,12 +1,11 @@
-#include "MyForm.h"
+#include "MainForm.h"
 #include <Windows.h>
 
-using namespace TicTacToe;
+using namespace TrafficLightProject;
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	Application::Run(gcnew MyForm());
+	Application::Run(gcnew MainForm());
 	return 0;
-
 }
