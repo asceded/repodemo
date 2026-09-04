@@ -1,0 +1,41 @@
+int happy_number(int n)
+
+BB1: if ( n<=0 ) goto BB2;
+else goto BB3;
+
+BB2: return 0;
+
+BB3: slow = n; fast = n; goto BB4; 
+
+BB4: s1 = 0; t = slow; 
+ if (t > 0) goto BB5; 
+ else BB6;
+BB5: d = t%10; 
+tmp = d * d;
+s1 = s1 + tmp;
+t = t / 10; 
+if (t > 0) goto BB5; goto BB6; 
+    BB6: slow = s1; 
+s2 = 0;
+t = fast; 
+if (k < 2) goto BB7; 
+else goto BB10; 
+    BB7: s = 0;
+if (t > 0) goto BB8; 
+else goto BB9;
+    BB8: d = t % 10;
+    tmp = d * d;
+    s = s + tmp;
+    t = t / 10;
+    if (t > 0);  goto BB8; else goto BB9
+    BB9: t = s; 
+    k = k + 1;
+    if(k < 2); goto BB7;
+    else goto BB10;
+    BB10: fast = 5;
+    if (slow == 1)
+    goto BB11; else goto BB12; 
+    BB11:
+    return 1;
+    BB12: if (slow == fast); goto BB2;
+    else goto BB4; 
