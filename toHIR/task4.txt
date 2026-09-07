@@ -1,0 +1,37 @@
+int lcm(int a, int b)
+
+BB1: if (a == 0) goto BB2;
+     else goto BB3;
+
+BB2: return 0;
+
+BB3: if (b == 0) goto BB2;
+     else goto BB4;
+
+BB4: if (a < 0) goto BB5;
+     else goto BB6;
+
+BB5: a = -a;
+     goto BB6;
+
+BB6: if (b < 0) goto BB7;
+     else goto BB8;
+
+BB7: b = -b;
+     goto BB8;
+
+BB8: x = a;
+     y = b;
+     goto BB9;
+
+BB9: if (y != 0) goto BB10;
+     else goto BB11;
+
+BB10: t = y;
+      y = x % y;
+      x = t;
+      goto BB9;
+
+BB11: tmp1 = a / x;
+      tmp2 = tmp1 * b;
+      return tmp2;

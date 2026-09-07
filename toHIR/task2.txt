@@ -1,0 +1,19 @@
+int factorial(int n)
+
+BB1: if (n < 0) goto BB2;
+     else goto BB3;
+
+BB2: return -1;
+
+BB3: r = 1;
+     i = 2;
+     goto BB4;
+
+BB4: if (i <= n) goto BB5;
+     else goto BB6;
+
+BB5: r = r * i;
+     i = i + 1;
+     goto BB4;
+
+BB6: return r;

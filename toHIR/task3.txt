@@ -1,0 +1,23 @@
+int gcd(int a, int b)
+
+BB1: if (a < 0) goto BB2;
+     else goto BB3;
+
+BB2: a = -a;
+     goto BB3;
+
+BB3: if (b < 0) goto BB4;
+     else goto BB5;
+
+BB4: b = -b;
+     goto BB5;
+
+BB5: if (b != 0) goto BB6;
+     else goto BB7;
+
+BB6: t = b;
+     b = a % b;
+     a = t;
+     goto BB5;
+
+BB7: return a;

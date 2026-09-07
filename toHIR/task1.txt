@@ -1,0 +1,27 @@
+int fibonacci(int n)
+
+BB1: if (n <= 0) goto BB2;
+     else goto BB3;
+
+BB2: return 0;
+
+BB3: if (n == 1) goto BB4;
+     else goto BB5;
+
+BB4: return 1;
+
+BB5: a = 0;
+     b = 1;
+     i = 2;
+     goto BB6;
+
+BB6: if (i <= n) goto BB7;
+     else goto BB8;
+
+BB7: t = a + b;
+     a = b;
+     b = t;
+     i = i + 1;
+     goto BB6;
+
+BB8: return b;

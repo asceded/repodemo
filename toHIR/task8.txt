@@ -1,0 +1,19 @@
+int digit_sum(int n)
+
+BB1: if (n < 0) goto BB2;
+     else goto BB3;
+
+BB2: n = -n;
+     goto BB3;
+
+BB3: s = 0;
+     goto BB4;
+
+BB4: if (n > 0) goto BB5;
+     else goto BB6;
+
+BB5: s = s + (n % 10);
+     n = n / 10;
+     goto BB4;
+
+BB6: return s;

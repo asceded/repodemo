@@ -1,0 +1,30 @@
+int sum_of_divisors(int n)
+
+BB1: if (n <= 0) goto BB2;
+     else goto BB3;
+
+BB2: return 0;
+
+BB3: s = 0;
+     i = 1;
+     goto BB4;
+
+BB4: if (i * i <= n) goto BB5;
+     else goto BB11;
+
+BB5: if (n % i == 0) goto BB6;
+     else goto BB9;
+
+BB6: s = s + i;
+     goto BB7;
+
+BB7: if (i != n / i) goto BB8;
+     else goto BB9;
+
+BB8: s = s + (n / i);
+     goto BB9;
+
+BB9: i = i + 1;
+     goto BB4;
+
+BB11: return s;
